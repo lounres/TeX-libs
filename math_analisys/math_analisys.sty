@@ -1,0 +1,50 @@
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[russian]{babel}
+\RequirePackage{amsthm,amsmath,amssymb}
+\RequirePackage{graphicx}
+\RequirePackage{xcolor}
+\RequirePackage{xspace}
+\RequirePackage{hyperref}
+\RequirePackage{cmap}
+
+% Цвета для ссылок
+% \definecolor{linkcolor}{HTML}{00008B} % цвет ссылок
+% \definecolor{urlcolor}{HTML}{00008B} % цвет гиперссылок
+\hypersetup{pdfstartview=FitH, linkcolor=linkcolor, urlcolor=urlcolor}
+
+\newcommand{\CC}[1][]{\ensuremath{\mathbb{C}#1}\xspace}
+\newcommand{\EE}[1][]{\ensuremath{\mathbb{E}#1}\xspace}
+\newcommand{\FF}[1][]{\ensuremath{\mathbb{F}#1}\xspace}
+\newcommand{\GG}[1][]{\ensuremath{\mathbb{G}#1}\xspace}
+\newcommand{\HH}[1][]{\ensuremath{\mathbb{H}#1}\xspace}
+\newcommand{\II}[1][]{\ensuremath{\mathbb{I}#1}\xspace}
+\newcommand{\KK}[1][]{\ensuremath{\mathbb{K}#1}\xspace}
+\newcommand{\NN}[1][]{\ensuremath{\mathbb{N}#1}\xspace}
+\newcommand{\PP}[1][]{\ensuremath{\mathbb{P}#1}\xspace}
+\newcommand{\QQ}[1][]{\ensuremath{\mathbb{Q}#1}\xspace}
+\newcommand{\RR}[1][]{\ensuremath{\mathbb{R}#1}\xspace}
+\newcommand{\ZZ}[1][]{\ensuremath{\mathbb{Z}#1}\xspace}
+
+\DeclareMathOperator{\Res}{Res}
+
+\hoffset = -0.8 in
+\setlength{\textwidth}{480 pt}
+\voffset = -1 in
+\setlength{\textheight}{720 pt}
+
+\newtheorem{theor}{Теорема}
+\newtheorem{lemma}[theor]{Лемма}
+\newtheorem{conseq}{Следствие}[theor]
+
+\theoremstyle{definition}
+\newtheorem*{problem}{Задача}
+\newtheorem{defin}{Определение}
+
+\theoremstyle{remark}
+\newtheorem{remark}{Замечание}
+\newtheorem*{remark*}{Замечание}
+\newenvironment{proof*}[1]{\begin{proof}[\textup{\textbf{#1}}]}{\end{proof}}
+
+\newcommand{\breaker}{\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}}
+
+\renewcommand{\proofname}{\textup{\textbf{Доказательство}}}
