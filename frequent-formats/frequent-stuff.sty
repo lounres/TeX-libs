@@ -1,5 +1,8 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{frequent-stuff}[09.2020 Collection of repeating preamble rubbish]
+
 \RequirePackage[utf8]{inputenc}
-\RequirePackage[russian]{babel}
+\RequirePackage[english,russian]{babel}
 \RequirePackage{amsthm,amsmath,amssymb}
 \RequirePackage{graphicx}
 \RequirePackage{xcolor}
@@ -33,28 +36,20 @@
 \voffset = -1 in
 \setlength{\textheight}{720 pt}
 
-\newtheorem{theorem}{Теорема}
-\newtheorem*{theorem*}{Теорема}
-\newtheorem{lemma}[theorem]{Лемма}
-\newtheorem{thlemma}{Лемма}[theorem]
-\newtheorem*{lemma*}{Лемма}
-\newtheorem{corollary}{Следствие}[theorem]
-\newtheorem*{corollary*}{Следствие}
-\newtheorem{statement}{Утверждение}
-\newtheorem*{statement*}{Утверждение}
-\newtheorem{exercise}{Упражнение}
-\newtheorem*{exercise*}{Упражнение}
-\newtheorem{problem}{Задача}
-\newtheorem*{problem*}{Задача}
+\newcommand{\setproofname}[1]{
+    % Insolently stolen from amsthm doc and edited.
+    \makeatletter
+    \renewenvironment{proof}[1][#1]{
+        \par\pushQED{\qed}%
+        \normalfont \topsep6\p@\@plus6\p@\relax
+        \trivlist
+        \item\relax
+            {\bfseries
+        #1\@addpunct{.}}\hspace\labelsep\ignorespaces
+    }{%
+        \popQED\endtrivlist\@endpefalse
+    }
+    \makeatother
+}
 
-\theoremstyle{definition}
-\newtheorem{definition}{Определение}
-
-\theoremstyle{remark}
-\newtheorem{remark}{Замечание}
-\newtheorem*{remark*}{Замечание}
-\newtheorem{example}{Пример}
-\newtheorem*{example*}{Пример}
-\newenvironment{proof*}[1]{\begin{proof}[\textup{\textbf{#1}}]}{\end{proof}}
-
-\renewcommand{\proofname}{\textup{\textbf{Доказательство}}}
+\setproofname{Доказательство}

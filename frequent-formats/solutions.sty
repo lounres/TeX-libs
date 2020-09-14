@@ -1,0 +1,26 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{solutions}[09.2020 Lightweigth framework for writing solutions of listed problems.]
+
+\RequirePackage{frequent-stuff}
+
+\newtheorem{theorem}{Теорема}
+\newtheorem{lemma}[theorem]{Лемма}
+\newtheorem{corollary}{Следствие}[theorem]
+
+\theoremstyle{definition}
+\newtheorem{prb}{Задача}
+\newenvironment{problem}[1]{
+    \setcounter{prb}{#1}
+    \addtocounter{prb}{-1}
+    \begin{prb}
+}{
+    \end{prb}
+}
+\newtheorem{enumproblem}{Задача}
+\newtheorem{definition}{Определение}
+
+\theoremstyle{remark}
+\newtheorem{remark}{Замечание}
+\newtheorem*{remark*}{Замечание}
+
+\newcommand{\breaker}{\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}}

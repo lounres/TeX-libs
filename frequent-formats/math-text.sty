@@ -1,0 +1,27 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{math-text}[09.2020 Lightweigth framework for writing math conspects]
+
+\RequirePackage{frequent-stuff}
+
+\newtheorem{theorem}{Теорема}
+\newtheorem*{theorem*}{Теорема}
+\newtheorem{lemma}[theorem]{Лемма}
+\newtheorem{thlemma}{Лемма}[theorem]
+\newtheorem*{lemma*}{Лемма}
+\newtheorem{corollary}{Следствие}[theorem]
+\newtheorem*{corollary*}{Следствие}
+\newtheorem{statement}{Утверждение}
+\newtheorem*{statement*}{Утверждение}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Определение}
+\newtheorem{exercise}{Упражнение}
+\newtheorem*{exercise*}{Упражнение}
+\newtheorem{problem}{Задача}
+\newtheorem*{problem*}{Задача}
+
+\theoremstyle{remark}
+\newtheorem{remark}{Замечание}
+\newtheorem*{remark*}{Замечание}
+\newtheorem{example}{Пример}
+\newtheorem*{example*}{Пример}
