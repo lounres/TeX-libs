@@ -15,6 +15,7 @@
     \begin{prb}
 }{
     \end{prb}
+    \NormalizeEnumerate
     \breaker
 }
 \newtheorem{enumprb}{Задача}
@@ -22,6 +23,7 @@
     \begin{enumprb}
 }{
     \end{enumprb}
+    \NormalizeEnumerate
     \breaker
 }
 \newtheorem{definition}{Определение}
@@ -31,3 +33,25 @@
 \newtheorem*{remark*}{Замечание}
 
 \newcommand{\breaker}{\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}}
+
+\newcommand{\NormalizeEnumerate}{
+    \renewcommand{\theenumi}{\arabic{enumi}}
+    \renewcommand{\labelenumi}{\theenumi.}
+    \renewcommand{\theenumii}{\asbuk{enumii}}
+    \renewcommand{\labelenumii}{(\theenumii)}
+    \renewcommand{\theenumiii}{\roman{enumiii}}
+    \renewcommand{\labelenumiii}{\theenumiii.}
+    \renewcommand{\theenumiv}{\Asbuk{enumiv}}
+    \renewcommand{\labelenumiv}{\theenumiv.}
+}
+
+\newcommand{\ItemedProblem}{
+    \renewcommand{\theenumi}{\asbuk{enumi}}
+    \renewcommand{\labelenumi}{\theenumi)}
+    \renewcommand{\theenumii}{\arabic{enumii}}
+    \renewcommand{\labelenumii}{\theenumii.}
+    \renewcommand{\theenumiii}{\roman{enumiii}}
+    \renewcommand{\labelenumiii}{\theenumiii.}
+    \renewcommand{\theenumiv}{\Asbuk{enumiv}}
+    \renewcommand{\labelenumiv}{\theenumiv.}
+}
