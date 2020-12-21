@@ -14,6 +14,7 @@
 \RequirePackage{textcomp}
 % \RequirePackage{bbold}
 \RequirePackage{dsfont}
+% \RequirePackage{float}
 
 % Цвета для ссылок
 % \definecolor{linkcolor}{HTML}{00008B} % цвет ссылок
@@ -41,27 +42,10 @@
 \voffset = -1 in
 \setlength{\textheight}{720 pt}
 
-\newcommand{\setproofname}[1]{
-    % Insolently stolen from amsthm doc and edited.
-    \makeatletter
-    \renewenvironment{proof}[1][#1]{
-        \par\pushQED{\qed}%
-        \normalfont \topsep6\p@\@plus6\p@\relax
-        \trivlist
-        \item\relax
-            {\bfseries
-        #1\@addpunct{.}}\hspace\labelsep\ignorespaces
-    }{%
-        \popQED\endtrivlist\@endpefalse
-    }
-    \makeatother
-}
+\newcommand{\prooflabel}{\bfseries{\proofname}}
 
-\setproofname{Доказательство}
-
-% Temporary command. TODO: Make `\setproofname` work as a decorator.
 \makeatletter
-\newenvironment{varproof}[1]{
+\renewenvironment{proof}[1][\prooflabel]{
     \par\pushQED{\qed}%
     \normalfont \topsep6\p@\@plus6\p@\relax
     \trivlist
