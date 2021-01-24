@@ -2,10 +2,29 @@
 \ProvidesPackage{solutions}[09.2020 Lightweigth framework for writing solutions of listed problems.]
 
 \RequirePackage{frequent-stuff}
+\RequirePackage{tocloft}
 
-\newtheorem{theorem}{Теорема}
-\newtheorem{lemma}[theorem]{Лемма}
-\newtheorem{corollary}{Следствие}[theorem]
+\newtheorem{xtheorem}{Теорема}
+\newenvironment{theorem}{
+    \begin{xtheorem}
+    \addcontentsline{toc}{subsubsection}{Теорема \thextheorem}
+}{
+    \end{xtheorem}
+}
+\newtheorem{xlemma}[xtheorem]{Лемма}
+\newenvironment{lemma}{
+    \begin{xlemma}
+    \addcontentsline{toc}{subsubsection}{Лемма \thexlemma}
+}{
+    \end{xlemma}
+}
+\newtheorem{xcorollary}{Следствие}[xtheorem]
+\newenvironment{corollary}{
+    \begin{xcorollary}
+    \addcontentsline{toc}{subsubsection}{Следствие \thexcorollary}
+}{
+    \end{xcorollary}
+}
 
 \theoremstyle{definition}
 \newtheorem{prb}{Задача}
@@ -13,6 +32,7 @@
     \setcounter{prb}{#1}
     \addtocounter{prb}{-1}
     \begin{prb}
+    \addcontentsline{toc}{subsection}{Задача #1}
 }{
     \end{prb}
     \NormalizeEnumerate
@@ -21,6 +41,7 @@
 \newtheorem{enumprb}{Задача}
 \newenvironment{enumproblem}{
     \begin{enumprb}
+    \addcontentsline{toc}{subsection}{Задача \theenumprb}
 }{
     \end{enumprb}
     \NormalizeEnumerate
