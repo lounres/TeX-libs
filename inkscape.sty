@@ -1,0 +1,15 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{inkscape}[02.2021 Little utility for Inkscape exported bundles of PDF and LaTeX outputs.]
+
+\RequirePackage{import}
+\RequirePackage{xifthen}
+\RequirePackage{pdfpages}
+\RequirePackage{transparent}
+
+\def\inkscaperoot{./}
+\def\inkscapedefaultwidth{\columnwidth}
+
+\newcommand{\inkscapepicture}[1]{%
+    \def\svgwidth{\inkscapedefaultwidth}
+    \import{\inkscaperoot}{#1.pdf_tex}
+}
