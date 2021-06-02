@@ -27,6 +27,15 @@
 }
 
 \theoremstyle{definition}
+\newtheorem{xdefinition}{Определение}
+\newenvironment{definition}{
+    \begin{xdefinition}
+    \addcontentsline{toc}{subsubsection}{Определение \thexdefinition}
+}{
+    \end{xdefinition}
+}
+
+\theoremstyle{definition}
 \newtheorem{prb}{Задача}
 \newenvironment{problem}[1]{
     \setcounter{prb}{#1}
@@ -48,7 +57,6 @@
     \breaker
 }
 \newtheorem*{problem*}{Задача}
-\newtheorem{definition}{Определение}
 
 \theoremstyle{remark}
 \newtheorem{remark}{Замечание}
