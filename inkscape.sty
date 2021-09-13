@@ -9,7 +9,7 @@
 \def\inkscaperoot{./}
 \def\inkscapedefaultwidth{\columnwidth}
 
-\newcommand{\inkscapepicture}[1]{%
-    \def\svgwidth{\inkscapedefaultwidth}
-    \import{\inkscaperoot}{#1.pdf_tex}
+\newcommand{\inkscapepicture}[2][\inkscapedefaultwidth]{%
+    \def\svgwidth{#1}
+    \import{\inkscaperoot}{#2.pdf_tex}
 }
