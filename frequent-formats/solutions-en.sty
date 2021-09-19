@@ -1,0 +1,87 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{solutions-en}[09.2020 Lightweigth framework for writing solutions of listed problems.]
+
+\RequirePackage{frequent-stuff}
+\RequirePackage{tocloft}
+
+\newtheorem{xtheorem}{Theorem}
+\newenvironment{theorem}{
+    \begin{xtheorem}
+    \addcontentsline{toc}{subsubsection}{Theorem \thextheorem}
+}{
+    \end{xtheorem}
+}
+\newtheorem{xlemma}[xtheorem]{Lemma}
+\newenvironment{lemma}{
+    \begin{xlemma}
+    \addcontentsline{toc}{subsubsection}{Lemma \thexlemma}
+}{
+    \end{xlemma}
+}
+\newtheorem{xcorollary}{Corollary}[xtheorem]
+\newenvironment{corollary}{
+    \begin{xcorollary}
+    \addcontentsline{toc}{subsubsection}{Corollary \thexcorollary}
+}{
+    \end{xcorollary}
+}
+
+\theoremstyle{definition}
+\newtheorem{xdefinition}{Definition}
+\newenvironment{definition}{
+    \begin{xdefinition}
+    \addcontentsline{toc}{subsubsection}{Definition \thexdefinition}
+}{
+    \end{xdefinition}
+}
+
+\theoremstyle{definition}
+\newtheorem{prb}{Problem}
+\newenvironment{problem}[1]{
+    \setcounter{prb}{#1}
+    \addtocounter{prb}{-1}
+    \begin{prb}
+    \addcontentsline{toc}{subsection}{Problem #1}
+}{
+    \end{prb}
+    \NormalizeEnumerate
+    \breaker
+}
+\newtheorem{enumprb}{Problem}
+\newenvironment{enumproblem}{
+    \begin{enumprb}
+    \addcontentsline{toc}{subsection}{Problem \theenumprb}
+}{
+    \end{enumprb}
+    \NormalizeEnumerate
+    \breaker
+}
+\newtheorem*{problem*}{Problem}
+
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+\newtheorem*{remark*}{Remark}
+
+\newcommand{\breaker}{\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}}
+
+\newcommand{\NormalizeEnumerate}{
+    \renewcommand{\theenumi}{\arabic{enumi}}
+    \renewcommand{\labelenumi}{\theenumi.}
+    \renewcommand{\theenumii}{\asbuk{enumii}}
+    \renewcommand{\labelenumii}{(\theenumii)}
+    \renewcommand{\theenumiii}{\roman{enumiii}}
+    \renewcommand{\labelenumiii}{\theenumiii.}
+    \renewcommand{\theenumiv}{\Asbuk{enumiv}}
+    \renewcommand{\labelenumiv}{\theenumiv.}
+}
+
+\newcommand{\ItemedProblem}{
+    \renewcommand{\theenumi}{\asbuk{enumi}}
+    \renewcommand{\labelenumi}{\theenumi)}
+    \renewcommand{\theenumii}{\arabic{enumii}}
+    \renewcommand{\labelenumii}{\theenumii.}
+    \renewcommand{\theenumiii}{\roman{enumiii}}
+    \renewcommand{\labelenumiii}{\theenumiii.}
+    \renewcommand{\theenumiv}{\Asbuk{enumiv}}
+    \renewcommand{\labelenumiv}{\theenumiv.}
+}

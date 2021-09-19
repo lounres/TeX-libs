@@ -1,0 +1,58 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{frequent-stuff-en}[09.2020 Collection of repeating preamble rubbish]
+
+\RequirePackage[utf8]{inputenc}
+% \RequirePackage{mmap}
+\RequirePackage{cmap}
+\RequirePackage[T2A]{fontenc}
+\RequirePackage[english]{babel}
+\RequirePackage{amsthm,amsmath,amssymb}
+\RequirePackage{graphicx}
+\RequirePackage{xcolor}
+\RequirePackage{xspace}
+\RequirePackage{hyperref}
+\RequirePackage{textcomp}
+% \RequirePackage{bbold}
+\RequirePackage{dsfont}
+% \RequirePackage{float}
+
+% Цвета для ссылок
+% \definecolor{linkcolor}{HTML}{00008B} % цвет ссылок
+% \definecolor{urlcolor}{HTML}{00008B} % цвет гиперссылок
+\hypersetup{pdfstartview=FitH, linkcolor=linkcolor, urlcolor=urlcolor}
+
+\newcommand{\CC}{\ensuremath{\mathbb{C}}\xspace}
+\newcommand{\EE}{\ensuremath{\mathbb{E}}\xspace}
+\newcommand{\FF}{\ensuremath{\mathbb{F}}\xspace}
+\newcommand{\GG}{\ensuremath{\mathbb{G}}\xspace}
+\newcommand{\HH}{\ensuremath{\mathbb{H}}\xspace}
+\newcommand{\II}{\ensuremath{\mathbb{I}}\xspace}
+\newcommand{\KK}{\ensuremath{\mathbb{K}}\xspace}
+\newcommand{\NN}{\ensuremath{\mathbb{N}}\xspace}
+\newcommand{\PP}{\ensuremath{\mathbb{P}}\xspace}
+\newcommand{\QQ}{\ensuremath{\mathbb{Q}}\xspace}
+\newcommand{\RR}{\ensuremath{\mathbb{R}}\xspace}
+\newcommand{\ZZ}{\ensuremath{\mathbb{Z}}\xspace}
+
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\divided}{\mathop{\raisebox{-2pt}{\vdots}}}
+
+\hoffset = -0.8 in
+\setlength{\textwidth}{510 pt}
+\voffset = -1 in
+\setlength{\textheight}{720 pt}
+
+\newcommand{\prooflabel}{\bfseries{\proofname}}
+
+\makeatletter
+\renewenvironment{proof}[1][\prooflabel]{
+    \par\pushQED{\qed}%
+    \normalfont \topsep6\p@\@plus6\p@\relax
+    \trivlist
+    \item\relax
+        {\bfseries
+    #1\@addpunct{.}}\hspace\labelsep\ignorespaces
+}{%
+    \popQED\endtrivlist\@endpefalse
+}
+\makeatother
